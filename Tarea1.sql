@@ -1,9 +1,9 @@
 -- 1 ¿Cómo obtenemos todos los nombres y correos de nuestros clientes canadienses para una campaña?
 select concat(c.first_name, ' ', c.last_name), c.email from customer c
 join address a using (address_id) 
-join city ci using (city_id)
-join country co using (country_id)
-where co.country_id = 20;
+join city ct using (city_id)
+join country cou using (country_id)
+where cou.country_id = 20;
 -- 2 ¿Qué cliente ha rentado más de nuestra sección de adultos?
 select concat(c.first_name, ' ', c.last_name), count(r.rental_id) as rentas from customer c
 join rental r using (customer_id)
